@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    text-transform: uppercase;
+}
+
+.container {
+    display: grid;
+    color: firebrick;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: 300px 600px 200px 450px ;
+    grid-template-areas:
+    "head head head"
+    "feat1 feat2 feat3"
+    "sign sign sign"
+    "cont cont cont";
+
+}
+
+.container > * {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.header {
+    background-color: aqua;
+    grid-area: head;
+}
+
+.contant {
+    background-color: brown;
+    grid-area: cont;
+}
+
+.sing-up {
+    background-color: coral;
+    grid-area: sign;
+}
+
+.feature-one {
+    background-color: darkgreen;
+    grid-area: feat1;
+}
+
+.feature-two {
+    background-color: darksalmon;
+    grid-area: feat2;
+}
+
+.feature-three {
+    background-color: darkslateblue;
+    grid-area: feat3;
+}
+
+@media (max-width: 550px){
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "head"
+        "cont"
+        "sign"
+        "feat1"
+        "feat2"
+        "feat3"
+        ;
+        grid-template-rows: 300px 600px 300px 250px 250px 250px ;
+
+
+    }
+}
+
+@media (max-width:768px) {
+    .container {
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 300px 600px 250px 250px;
+        grid-template-areas:
+        "head head"
+        "cont cont"
+        "sign feat1"
+        "feat2 feat3" ;
+        
+    }
+}
